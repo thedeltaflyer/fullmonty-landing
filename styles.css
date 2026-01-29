@@ -937,6 +937,7 @@ button:focus-visible,
   }
 
   .main-nav {
+    width: 100%;
     gap: 14px;
     font-size: 13px;
   }
@@ -944,7 +945,7 @@ button:focus-visible,
   .lang-selector {
     border-left: none;
     padding-left: 0;
-    margin-left: 0;
+    margin-left: auto;
   }
 
   .tap-grid {
