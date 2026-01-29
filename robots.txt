@@ -1,0 +1,7 @@
+# Full Monty British Pub & Cider House - Yokohama
+# Update the Sitemap URL to your production domain if different from https://fullmonty.pub
+
+User-agent: *
+Allow: /
+
+Sitemap: https://fullmonty.pub/sitemap.xml

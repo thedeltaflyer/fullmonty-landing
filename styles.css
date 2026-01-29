@@ -54,6 +54,35 @@ a:hover {
   text-decoration: underline;
 }
 
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 100;
+  padding: 12px 20px;
+  background: var(--accent-deep);
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.lang-btn:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
 .container {
   width: min(1080px, 92vw);
   margin: 0 auto;
@@ -136,8 +165,47 @@ a:hover {
 
 .main-nav {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 20px;
   font-size: 14px;
+}
+
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  padding-left: 16px;
+  border-left: 1px solid var(--border-subtle);
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.lang-btn:hover {
+  color: var(--accent-strong);
+}
+
+.lang-btn-active,
+.lang-btn[aria-pressed="true"] {
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.lang-sep {
+  color: var(--border-subtle);
+  font-size: 12px;
+  user-select: none;
 }
 
 .main-nav a {
@@ -863,6 +931,12 @@ a:hover {
   .main-nav {
     gap: 14px;
     font-size: 13px;
+  }
+
+  .lang-selector {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
   }
 
   .tap-grid {
